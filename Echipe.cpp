@@ -102,7 +102,7 @@ FCDB::FCDB() {
 }
 
 FCDB::FCDB(std::string nume, int an_infiintare, int campionat, int cupa_romaniei, int supercupa_romaniei) : Participanti(nume, an_infiintare, campionat, cupa_romaniei, supercupa_romaniei)
-{	//lista de initializare
+{	
 	this->nume = "FC Dinamo Bucuresti";
 
 }
