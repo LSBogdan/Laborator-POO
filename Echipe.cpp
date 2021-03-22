@@ -12,7 +12,6 @@ FCA::FCA()
 
 FCA::FCA(FCA& copie_arges)
 {
-	//Constructorul de copiere
 	this->nume = copie_arges.nume;
 	this->an_infiintare = copie_arges.an_infiintare;
 	this->campionat = copie_arges.campionat;
