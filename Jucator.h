@@ -10,7 +10,7 @@ protected:
 
 public:
 	Jucator() {
-		//Constructor implicit
+		
 		post = "";
 		nume = "";
 		prenume = "";
@@ -19,7 +19,7 @@ public:
 		salariu = 0;
 	}
 	Jucator(std::string nume, std::string prenume, int varsta, int experienta) {
-		//Constructor general
+		
 		this->post = "";
 		this->nume = nume;
 		this->prenume = prenume;
