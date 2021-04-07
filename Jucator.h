@@ -10,7 +10,6 @@ protected:
 
 public:
 	Jucator() {
-		
 		post = "";
 		nume = "";
 		prenume = "";
@@ -19,7 +18,6 @@ public:
 		salariu = 0;
 	}
 	Jucator(std::string nume, std::string prenume, int varsta, int experienta) {
-		
 		this->post = "";
 		this->nume = nume;
 		this->prenume = prenume;
@@ -53,7 +51,7 @@ public:
 		return this->varsta;
 	}
 
-	int setVarsta(int varsta_2) {
+	void setVarsta(int varsta_2) {
 		this->varsta = varsta_2;
 	}
 
@@ -61,7 +59,7 @@ public:
 		return this->experienta;
 	}
 
-	int setExperienta(int experienta_2) {
+	void setExperienta(int experienta_2) {
 		this->experienta = experienta_2;
 	}
 
@@ -69,7 +67,7 @@ public:
 		return this->salariu;
 	}
 
-	float setSalariu(float salariu_2) {
+	void setSalariu(float salariu_2) {
 		this->salariu = salariu_2;
 	}
 
