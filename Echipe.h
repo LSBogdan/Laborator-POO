@@ -1,6 +1,6 @@
 #pragma once
 #include "ClubSportiv.h"
-#include <iostream>
+
 
 class FCA :
     public ClubSportiv {
