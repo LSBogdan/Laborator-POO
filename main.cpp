@@ -6,7 +6,7 @@
 int main()
 {
 	FCA fca("FC Arges Pitesti", 1953, 2, 0, 0);
-	fca.afisare();
+	std::cout << fca << "\n";
 
 	std::cout << "\nCativa jucatori din lotul echipei:" << "\n\n";
 
@@ -30,10 +30,11 @@ int main()
 	atacant_ag.mariri_salariu();
 	std::cout << "\n";
 
+	
 	std::cout << "\n\n";
 
 	FCDB fcdb("FC Dinamo Bucuresti", 1948, 18, 13, 2);
-	fcdb.afisare();
+	std::cout << fcdb << "\n";
 	std::cout << "\nCativa jucatori din lotul echipei:" << "\n\n";
 
 	Portar portar_db("Esanu", "Mihai", 22, 4);
