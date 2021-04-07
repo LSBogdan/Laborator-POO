@@ -1,27 +1,28 @@
 #pragma once
-#include "Participanti.h"
+#include "ClubSportiv.h"
 #include <iostream>
 
 class FCA :
-    public Participanti {
+    public ClubSportiv {
 public:
     FCA();
     FCA(std::string, int, int, int, int);
     ~FCA();
-    FCA(FCA& copie_arges);
-    FCA operator=(const FCA& copie_arges);
+    FCA(const FCA& copie_arges);
+    //FCA operator=(const FCA& copie_arges);
+    FCA::FCA(std::string, int, int, int, int);
     friend std::ostream& operator<<(std::ostream& output, const FCA& afisare_arges);
-    void afisare();
-    void detalii();
+    void coeficient();
+  // void detalii();
 
 };
 
-class FCDB :public Participanti {
+class FCDB :public ClubSportiv {
 public:
     FCDB();
     FCDB(std::string, int, int, int, int);
     ~FCDB();
-    void afisare();
-    void detalii();
+    void coeficient();
+//    void detalii();
 };
 
