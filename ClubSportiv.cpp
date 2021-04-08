@@ -56,22 +56,36 @@ ClubSportiv::ClubSportiv(const std::string& nume, int anInfiintare, int campiona
     campionate_castigate(campionateCastigate),
     cupa_romaniei(cupaRomaniei), supercupa_romaniei(supercupaRomaniei) {}
 
+
+
 std::istream& operator>>(std::istream& is, ClubSportiv& sportiv) {
-    std::cout << "Nume: " <<"\n";
+    std::cout << "nume: " << std::endl;
     is >> sportiv.nume;
-    std::cout << " An_infiintare: " <<"\n";
+    std::cout << " an_infiintare: " << std::endl;
     is >> sportiv.an_infiintare;
-    std::cout << " Campionate_castigate: " <<"\n";
+    std::cout << " campionate_castigate: " << std::endl;
     is >> sportiv.campionate_castigate;
-    std::cout << " Cupa_romaniei: " << "\n";
+    std::cout << " cupa_romaniei: " << std::endl;
     is >> sportiv.cupa_romaniei;
-    std::cout << " Supercupa_romaniei: " << "\n";
+    std::cout << " supercupa_romaniei: " << std::endl;
     is >> sportiv.supercupa_romaniei;
-    std::cout << "Detalii:" << "\n";
+    std::cout << "Detalii:" << std::endl;
     is >> sportiv.detalii;
     return is;
 }
 
+ClubSportiv::ClubSportiv(const ClubSportiv& club) {
+    nume = club.nume;
+    an_infiintare = club.an_infiintare;
+    campionate_castigate = club.campionate_castigate;
+    cupa_romaniei = club.cupa_romaniei;
+    supercupa_romaniei = club.supercupa_romaniei;
+    detalii = club.detalii;
+}
+
+//void ClubSportiv::detalii(){
+//    std:: cout << "\n.."; // coming soon
+//}
 
 ClubSportiv::~ClubSportiv() {
     nume = "";
@@ -91,12 +105,14 @@ ClubSportiv::ClubSportiv(const std::string& nume, int anInfiintare, int campiona
     detalii(detalii) {}
 
 std::ostream& operator<<(std::ostream& os, const ClubSportiv& sportiv) {
-    os << "Nume: " << sportiv.nume <<".\n"<< "An_infiintare: " << sportiv.an_infiintare << ".\n" << "Campionate_castigate: " 
-        << sportiv.campionate_castigate <<".\n"<< "Cupa_romaniei: " << sportiv.cupa_romaniei << ".\n" << "Supercupa_romaniei: "
-        << sportiv.supercupa_romaniei << ".\n";
-    os << "Detalii: " << sportiv.detalii << " \n";
+    os << "nume: " << sportiv.nume << " an_infiintare: " << sportiv.an_infiintare << " campionate_castigate: "
+        << sportiv.campionate_castigate << " cupa_romaniei: " << sportiv.cupa_romaniei << " supercupa_romaniei: "
+        << sportiv.supercupa_romaniei << std::endl;
+    os << " detalii: " << sportiv.detalii << std::endl;
     return os;
 }
+
+
 
 bool ClubSportiv::operator==(const ClubSportiv& rhs) const {
     return nume == rhs.nume &&
@@ -109,6 +125,24 @@ bool ClubSportiv::operator==(const ClubSportiv& rhs) const {
 
 bool ClubSportiv::operator!=(const ClubSportiv& rhs) const {
     return !(rhs == *this);
+}
+
+const Detalii& ClubSportiv::getDetalii() const {
+    return detalii;
+}
+
+void ClubSportiv::setDetalii(const Detalii& detalii) {
+    ClubSportiv::detalii = detalii;
+}
+
+ClubSportiv ClubSportiv::operator=(const ClubSportiv& clb) {
+    nume = clb.getNume();
+    an_infiintare = clb.getAnInfiintare();
+    campionate_castigate = clb.getCampionateCastigate();
+    cupa_romaniei = clb.getCupaRomaniei();
+    supercupa_romaniei = clb.getSupercupaRomaniei();
+    detalii = clb.getDetalii();
+    return *this;
 }
 
 //--- PENTRU CLASA DETALII
@@ -141,7 +175,7 @@ std::ostream& operator<<(std::ostream& os, const Detalii& detalii) {
         os << "Nu exista detalii" << std::endl;
     }
     else {
-        os << "Istoria_echipei: " << detalii.istoria_echipei << " Detalii_stadion: " << detalii.detalii_stadion;
+        os << "istoria_echipei: " << detalii.istoria_echipei << " detalii_stadion: " << detalii.detalii_stadion;
     }
     return os;
 }
