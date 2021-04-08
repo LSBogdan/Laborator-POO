@@ -6,7 +6,7 @@ class Detalii {
     std::string istoria_echipei;
     std::string detalii_stadion;
 public:
-
+    //---SETTERI SI GETTERI
     const std::string& getIstoriaEchipei() const;
 
     void setIstoriaEchipei(const std::string& istoriaEchipei);
@@ -15,12 +15,11 @@ public:
 
     void setDetaliiStadion(const std::string& detaliiStadion);
 
-
+    //--CONSTRUCTORI
     Detalii(const std::string& istoriaEchipei, const std::string& detaliiStadion);
-
     Detalii();
 
-
+    // -- FUNCTII INPUT OUTPUT
     friend std::ostream& operator<<(std::ostream& os, const Detalii& detalii);
     friend std::istream& operator>>(std::istream& is, Detalii& detalii);
 
@@ -37,7 +36,7 @@ class ClubSportiv {
     int supercupa_romaniei;
     Detalii detalii;
 public:
-
+    //---SETTERI SI GETTERI---
     const std::string& getNume() const;
 
     void setNume(const std::string& nume);
@@ -58,7 +57,11 @@ public:
 
     void setSupercupaRomaniei(int supercupaRomaniei);
 
+    const Detalii& getDetalii() const;
 
+    void setDetalii(const Detalii& detalii);
+
+    //--CONSTRUCTORI--
     ClubSportiv();
 
     ClubSportiv(const std::string& nume, int anInfiintare, int campionateCastigate, int cupaRomaniei,
@@ -67,17 +70,19 @@ public:
     ClubSportiv(const std::string& nume, int anInfiintare, int campionateCastigate, int cupaRomaniei,
         int supercupaRomaniei, const Detalii& detalii);
 
+    ClubSportiv(const ClubSportiv& club);
+
     friend std::ostream& operator<<(std::ostream& os, const ClubSportiv& sportiv);
 
     friend std::istream& operator>>(std::istream& is, ClubSportiv& sportiv);
 
+    ClubSportiv operator=(const ClubSportiv& clb);
     bool operator==(const ClubSportiv& rhs) const;
 
     bool operator!=(const ClubSportiv& rhs) const;
-
+    // --functii virtuale
 //    virtual void detalii() = 0;
 
-
+    //--DESTRUCTOR
     virtual ~ClubSportiv();
 };
-
