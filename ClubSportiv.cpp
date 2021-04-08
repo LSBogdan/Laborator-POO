@@ -145,7 +145,6 @@ ClubSportiv ClubSportiv::operator=(const ClubSportiv& clb) {
     return *this;
 }
 
-//--- PENTRU CLASA DETALII
 const std::string& Detalii::getIstoriaEchipei() const {
     return istoria_echipei;
 }
