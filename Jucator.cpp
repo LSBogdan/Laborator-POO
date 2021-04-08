@@ -93,3 +93,4 @@ Jucator::~Jucator() {
     experienta = 0;
     salariu = 0;
 }
+ 
