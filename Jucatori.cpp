@@ -1,7 +1,3 @@
-//
-// Created by Bogdan on 22/04/2021.
-//
-
 #include "Jucatori.h"
 #include <iostream>
 
