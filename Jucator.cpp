@@ -10,13 +10,17 @@ Jucator::Jucator() {
     salariu = 0;
 }
 
-Jucator::Jucator(const std::string& post, const std::string& nume, const std::string& prenume, int varsta,
-    int experienta, float salariu) : post(post), nume(nume), prenume(prenume), varsta(varsta),
-    experienta(experienta), salariu(salariu) {}
+Jucator::Jucator(const std::string& nume, const std::string& prenume, int varsta, int experienta) : nume(nume), prenume(prenume), varsta(varsta), experienta(experienta) {
+    this -> post = "";
+    this -> nume = nume;
+    this -> prenume = prenume;
+    this -> varsta = varsta;
+    this -> experienta = experienta;
+}
 
 std::ostream& operator<<(std::ostream& os, const Jucator& jucator) {
-    os << "Post: " << jucator.post << ".\n" << "Nume: " << jucator.nume<< ".\n" << "Prenume: " << jucator.prenume<< ".\n" << "Varsta: "
-        << jucator.varsta << ".\n" << "Experienta: " << jucator.experienta << ".\n" << "Salariu: " << jucator.salariu;
+    os << "Post: " << jucator.post << ".\n" << "Nume: " << jucator.nume << ".\n" << "Prenume: " << jucator.prenume << ".\n" << "Varsta: "
+       << jucator.varsta << ".\n" << "Experienta: " << jucator.experienta << ".\n" << "Salariu: " << jucator.salariu <<" euro brut pe luna.";
     return os;
 }
 
