@@ -1,4 +1,3 @@
-#pragma once
 #include <string>
 #include <ostream>
 
@@ -15,7 +14,7 @@ public:
 
     void setDetaliiStadion(const std::string& detaliiStadion);
 
-    
+   
     Detalii(const std::string& istoriaEchipei, const std::string& detaliiStadion);
     Detalii();
 
@@ -65,10 +64,10 @@ public:
     ClubSportiv();
 
     ClubSportiv(const std::string& nume, int anInfiintare, int campionateCastigate, int cupaRomaniei,
-        int supercupaRomaniei);
+                int supercupaRomaniei);
 
     ClubSportiv(const std::string& nume, int anInfiintare, int campionateCastigate, int cupaRomaniei,
-        int supercupaRomaniei, const Detalii& detalii);
+                int supercupaRomaniei, const Detalii& detalii);
 
     ClubSportiv(const ClubSportiv& club);
 
@@ -80,6 +79,7 @@ public:
     bool operator==(const ClubSportiv& rhs) const;
 
     bool operator!=(const ClubSportiv& rhs) const;
+   
 //    virtual void detalii() = 0;
 
     
