@@ -1,64 +1,87 @@
-#pragma once
-
 #include <string>
 #include <ostream>
-#include <iostream>
 
-class Jucator {
-protected:
-    std::string post, nume, prenume;
-    int varsta, experienta;
-    float salariu;
+class Detalii {
+    std::string istoria_echipei;
+    std::string detalii_stadion;
 public:
-   
-    Jucator();
+    
+    const std::string& getIstoriaEchipei() const;
 
-    Jucator(const std::string& post, const std::string& nume, const std::string& prenume, int varsta, int experienta,
-        float salariu);
+    void setIstoriaEchipei(const std::string& istoriaEchipei);
 
-   
-    friend std::ostream& operator<<(std::ostream& os, const Jucator& jucator);
-    friend std::istream& operator>>(std::istream& is, Jucator& jucator);
+    const std::string& getDetaliiStadion() const;
+
+    void setDetaliiStadion(const std::string& detaliiStadion);
 
     
-    const std::string& getPost() const;
+    Detalii(const std::string& istoriaEchipei, const std::string& detaliiStadion);
+    Detalii();
 
-    void setPost(const std::string& post);
+    
+    friend std::ostream& operator<<(std::ostream& os, const Detalii& detalii);
+    friend std::istream& operator>>(std::istream& is, Detalii& detalii);
 
+    bool operator==(const Detalii& rhs) const;
+
+    bool operator!=(const Detalii& rhs) const;
+};
+
+class ClubSportiv {
+    std::string nume;
+    int an_infiintare;
+    int campionate_castigate;
+    int cupa_romaniei;
+    int supercupa_romaniei;
+    Detalii detalii;
+public:
+    
     const std::string& getNume() const;
 
     void setNume(const std::string& nume);
 
-    const std::string& getPrenume() const;
+    int getAnInfiintare() const;
 
-    void setPrenume(const std::string& prenume);
+    void setAnInfiintare(int anInfiintare);
 
-    int getVarsta() const;
+    int getCampionateCastigate() const;
 
-    void setVarsta(int varsta);
+    void setCampionateCastigate(int campionateCastigate);
 
-    int getExperienta() const;
+    int getCupaRomaniei() const;
 
-    void setExperienta(int experienta);
+    void setCupaRomaniei(int cupaRomaniei);
 
-    float getSalariu() const;
+    int getSupercupaRomaniei() const;
 
-    void setSalariu(float salariu);
+    void setSupercupaRomaniei(int supercupaRomaniei);
+
+    const Detalii& getDetalii() const;
+
+    void setDetalii(const Detalii& detalii);
 
     
-    virtual void mariri_salariu() {
-        if (experienta == 2)
-            salariu *= 1.2;
-        else if (experienta == 3)
-            salariu *= 1.3;
-        else if (experienta == 4)
-            salariu *= 1.4;
-        else if (experienta >= 5)
-            salariu *= 1.5;
-        std::cout << "Noul tau salariu este: " << this->salariu << " euro." << "\n\n";
-    }
+    ClubSportiv();
 
-   
-    virtual ~Jucator();
+    ClubSportiv(const std::string& nume, int anInfiintare, int campionateCastigate, int cupaRomaniei,
+                int supercupaRomaniei);
 
+    ClubSportiv(const std::string& nume, int anInfiintare, int campionateCastigate, int cupaRomaniei,
+                int supercupaRomaniei, const Detalii& detalii);
+
+    ClubSportiv(const ClubSportiv& club);
+
+    friend std::ostream& operator<<(std::ostream& os, const ClubSportiv& sportiv);
+
+    friend std::istream& operator>>(std::istream& is, ClubSportiv& sportiv);
+
+    ClubSportiv operator=(const ClubSportiv& clb);
+    bool operator==(const ClubSportiv& rhs) const;
+
+    bool operator!=(const ClubSportiv& rhs) const;
+    
+//    virtual void detalii() = 0;
+
+    
+    virtual ~ClubSportiv();
 };
