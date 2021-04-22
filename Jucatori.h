@@ -1,10 +1,3 @@
-//
-// Created by Bogdan on 22/04/2021.
-//
-
-#ifndef TEMA_POO_JUCATORI_H
-#define TEMA_POO_JUCATORI_H
-
 #include "Jucator.h"
 
 class Portar:
@@ -55,4 +48,4 @@ public:
     void mariri_salariu();
 
 };
-#endif //TEMA_POO_JUCATORI_H
+
