@@ -1,5 +1,6 @@
-#include "Jucatori.h"
 #include <iostream>
+#include "Jucatori.h"
+#include "Verificare__experienta.h"
 
 Portar::Portar() {
     post = "";
@@ -26,6 +27,19 @@ void Portar::mariri_salariu() {
         salariu *= 1.5;
     std::cout << "Noul tau salariu este: " << this->salariu << " euro brut pe luna.\n";
 }
+
+void Portar::ver_exp()
+{
+    if(this->experienta < 8)
+        throw Verificare__experienta();
+
+    else if(this->experienta < 11)
+        std::cout<<"Jucatorul este experimentat!\n\n";
+
+    else
+        std::cout<<"Jucatorul este foarte experimentat!\n\n";
+}
+
 Portar::~Portar() {
     post = "";
     nume = "";
@@ -50,14 +64,26 @@ Fundas::Fundas(const std::string &nume, const std::string &prenume, int varsta, 
 }
 void Fundas::mariri_salariu() {
     if (experienta == 2)
-        salariu *= 1.2;
+        salariu += salariu/2;
     else if (experienta == 3)
-        salariu *= 1.3;
+        salariu += salariu/3;
     else if (experienta == 4)
-        salariu *= 1.4;
+        salariu += salariu/4;
     else if (experienta >= 5)
-        salariu *= 1.5;
+        salariu += salariu/5;
     std::cout << "Noul tau salariu este: " << this->salariu << " euro brut pe luna.\n";
+}
+
+void Fundas::ver_exp()
+{
+    if(this->experienta < 7)
+        throw Verificare__experienta();
+
+    else if(this->experienta < 10)
+        std::cout<<"Jucatorul este experimentat!\n\n";
+
+    else
+        std::cout<<"Jucatorul este foarte experimentat!\n\n";
 }
 
 Fundas::~Fundas() {
@@ -85,14 +111,26 @@ Mijlocas::Mijlocas(const std::string &nume, const std::string &prenume, int vars
 
 void Mijlocas::mariri_salariu() {
     if (experienta == 2)
-        salariu *= 1.2;
+        salariu += salariu * 15 / 100;
     else if (experienta == 3)
-        salariu *= 1.3;
+        salariu += salariu * 20 / 100;
     else if (experienta == 4)
-        salariu *= 1.4;
+        salariu += salariu * 25 / 100;
     else if (experienta >= 5)
-        salariu *= 1.5;
+        salariu += salariu * 30/ 100;
     std::cout << "Noul tau salariu este: " << this->salariu << " euro brut pe luna.\n";
+}
+
+void Mijlocas::ver_exp()
+{
+    if(this->experienta < 9)
+        throw Verificare__experienta();
+
+    else if(this->experienta < 12)
+        std::cout<<"Jucatorul este experimentat!\n\n";
+
+    else
+        std::cout<<"Jucatorul este foarte experimentat!\n\n";
 }
 
 Mijlocas::~Mijlocas() {
@@ -120,14 +158,26 @@ Atacant::Atacant(const std::string &nume, const std::string &prenume, int varsta
 
 void Atacant::mariri_salariu() {
     if (experienta == 2)
-        salariu *= 1.2;
+        salariu += salariu * 0.15;
     else if (experienta == 3)
-        salariu *= 1.3;
+        salariu += salariu * 0.35;
     else if (experienta == 4)
-        salariu *= 1.4;
+        salariu +=  salariu * 0.55;
     else if (experienta >= 5)
-        salariu *= 1.5;
+        salariu += salariu * 0.75;
     std::cout << "Noul tau salariu este: " << this->salariu << " euro brut pe luna.\n";
+}
+
+void Atacant::ver_exp()
+{
+    if(this->experienta < 6)
+        throw Verificare__experienta();
+
+    else if(this->experienta < 9)
+        std::cout<<"Jucatorul este experimentat!\n\n";
+
+    else
+        std::cout<<"Jucatorul este foarte experimentat!\n\n";
 }
 
 Atacant::~Atacant() {
