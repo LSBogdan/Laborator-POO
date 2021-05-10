@@ -1,6 +1,7 @@
 #include "Jucator.h"
 #include <iostream>
 
+
 Jucator::Jucator() {
     post = "";
     nume = "";
@@ -40,6 +41,8 @@ std::istream& operator>>(std::istream& is, Jucator& jucator) {
 
     return is;
 }
+
+
 const std::string& Jucator::getPost() const {
     return post;
 }
