@@ -31,7 +31,9 @@ void Lot_echipa :: add_jucator(const Atacant& jucator)
 
 void Lot_echipa ::afisare_lot()
 {
-    for(int i = 0; i < lot.size(); i++)
-        std::cout << *lot[i] << "\n\n";
-    std::cout<<"\n";
+    for(int i = 0; i < lot.size(); i++) {
+        std::cout << *lot[i] << "\n";
+        lot[i]->mariri_salariu();
+        std::cout<<"\n";
+    }
 }
