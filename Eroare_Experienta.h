@@ -5,16 +5,16 @@
 #include "Jucator.h"
 #include "Jucatori.h"
 
-class Verificare__experienta: public std::exception{
+class Eroare_Experienta: public std::exception{
 
 public:
 
-    Verificare__experienta(){}
-    ~Verificare__experienta(){}
+    Eroare_Experienta(){}
+    ~Eroare_Experienta(){}
 
     const char* what() const throw()
     {
-        return "Jucatorul nu este experimentat inca!\n\n";
+        return "In lot exista cel putin un jucator neexperimentat!\n\n";
     }
 };
 
