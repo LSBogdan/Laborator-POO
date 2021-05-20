@@ -1,4 +1,3 @@
-
 #include "Jucatori.h"
 #include <vector>
 
@@ -6,19 +5,17 @@
 class Lot_echipa
 {
     std::vector<Jucator*> lot;
-    int nr_jucatori;
 
 public:
 
     Lot_echipa();
-    virtual ~Lot_echipa();
+    ~Lot_echipa();
 
-    void add_jucator(Portar jucator);
-    void add_jucator(Fundas jucator);
-    void add_jucator(Mijlocas jucator);
-    void add_jucator(Atacant jucator);
+    void add_jucator(const Portar& jucator);
+    void add_jucator(const Fundas& jucator);
+    void add_jucator(const Mijlocas& jucator);
+    void add_jucator(const Atacant& jucator);
 
     void afisare_lot();
 
 };
-
