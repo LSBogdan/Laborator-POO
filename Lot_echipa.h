@@ -1,3 +1,4 @@
+#pragma once
 #include "Jucatori.h"
 #include <vector>
 
