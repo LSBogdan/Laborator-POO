@@ -1,15 +1,7 @@
 #include <iostream>
 #include "Jucatori.h"
-#include "Verificare__experienta.h"
+#include "Eroare_Experienta.h"
 
-Portar::Portar() {
-    post = "";
-    nume = "";
-    prenume = "";
-    varsta = 0;
-    experienta = 0;
-    salariu = 0;
-}
 
 Portar::Portar(const std::string &nume, const std::string &prenume, int varsta, int experienta) : Jucator(nume, prenume, varsta, experienta) {
     this->post = "Portar";
@@ -31,7 +23,7 @@ void Portar::mariri_salariu() {
 void Portar::ver_exp()
 {
     if(this->experienta < 8)
-        throw Verificare__experienta();
+        throw Eroare_Experienta();
 
     else if(this->experienta < 11)
         std::cout<<"Jucatorul este experimentat!\n\n";
@@ -49,14 +41,6 @@ Portar::~Portar() {
     salariu = 0;
 }
 
-Fundas::Fundas() {
-    post = "";
-    nume = "";
-    prenume = "";
-    varsta = 0;
-    experienta = 0;
-    salariu = 0;
-}
 
 Fundas::Fundas(const std::string &nume, const std::string &prenume, int varsta, int experienta) : Jucator(nume, prenume, varsta, experienta) {
     this ->post = "Fundas";
@@ -77,7 +61,7 @@ void Fundas::mariri_salariu() {
 void Fundas::ver_exp()
 {
     if(this->experienta < 7)
-        throw Verificare__experienta();
+        throw Eroare_Experienta();
 
     else if(this->experienta < 10)
         std::cout<<"Jucatorul este experimentat!\n\n";
@@ -95,14 +79,6 @@ Fundas::~Fundas() {
     salariu = 0;
 }
 
-Mijlocas::Mijlocas() {
-    post = "";
-    nume = "";
-    prenume = "";
-    varsta = 0;
-    experienta = 0;
-    salariu = 0;
-}
 
 Mijlocas::Mijlocas(const std::string &nume, const std::string &prenume, int varsta, int experienta) : Jucator(nume, prenume, varsta, experienta) {
     this ->post = "Mijlocas";
@@ -124,7 +100,7 @@ void Mijlocas::mariri_salariu() {
 void Mijlocas::ver_exp()
 {
     if(this->experienta < 9)
-        throw Verificare__experienta();
+        throw Eroare_Experienta();
 
     else if(this->experienta < 12)
         std::cout<<"Jucatorul este experimentat!\n\n";
@@ -142,14 +118,6 @@ Mijlocas::~Mijlocas() {
     salariu = 0;
 }
 
-Atacant::Atacant() {
-    post = "";
-    nume = "";
-    prenume = "";
-    varsta = 0;
-    experienta = 0;
-    salariu = 0;
-}
 
 Atacant::Atacant(const std::string &nume, const std::string &prenume, int varsta, int experienta) : Jucator(nume, prenume, varsta, experienta) {
     this->post = "Atacant";
@@ -171,13 +139,13 @@ void Atacant::mariri_salariu() {
 void Atacant::ver_exp()
 {
     if(this->experienta < 6)
-        throw Verificare__experienta();
+        throw Eroare_Experienta();
 
     else if(this->experienta < 9)
-        std::cout<<"Jucatorul este experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator experimentat!\n\n";
 
     else
-        std::cout<<"Jucatorul este foarte experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator foarte experimentat!\n\n";
 }
 
 Atacant::~Atacant() {
