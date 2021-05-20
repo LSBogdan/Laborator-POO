@@ -26,10 +26,10 @@ void Portar::ver_exp()
         throw Eroare_Experienta();
 
     else if(this->experienta < 11)
-        std::cout<<"Jucatorul este experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator experimentat!\n\n";
 
     else
-        std::cout<<"Jucatorul este foarte experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator foarte experimentat!\n\n";
 }
 
 Portar::~Portar() {
@@ -64,10 +64,10 @@ void Fundas::ver_exp()
         throw Eroare_Experienta();
 
     else if(this->experienta < 10)
-        std::cout<<"Jucatorul este experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator experimentat!\n\n";
 
     else
-        std::cout<<"Jucatorul este foarte experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator foarte experimentat!\n\n";
 }
 
 Fundas::~Fundas() {
@@ -103,10 +103,10 @@ void Mijlocas::ver_exp()
         throw Eroare_Experienta();
 
     else if(this->experienta < 12)
-        std::cout<<"Jucatorul este experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator experimentat!\n\n";
 
     else
-        std::cout<<"Jucatorul este foarte experimentat!\n\n";
+        std::cout<<"In lot exista cel putin un jucator foarte experimentat!\n\n";
 }
 
 Mijlocas::~Mijlocas() {
