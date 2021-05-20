@@ -5,7 +5,6 @@ class Portar: public Jucator {
 
 public:
 
-    Portar();
     Portar(const std::string &nume, const std::string &prenume, int varsta, int experienta);
     virtual ~Portar();
 
@@ -19,7 +18,6 @@ class Fundas: public Jucator{
 
 public:
 
-    Fundas();
     Fundas(const std::string &nume, const std::string &prenume, int varsta, int experienta);
     virtual ~Fundas();
 
@@ -33,7 +31,6 @@ class Mijlocas: public Jucator{
 
 public:
 
-    Mijlocas();
     Mijlocas(const std::string &nume, const std::string &prenume, int varsta, int experienta);
     virtual ~Mijlocas();
 
@@ -46,7 +43,7 @@ public:
 class Atacant: public Jucator{
 
 public:
-    Atacant();
+
     Atacant(const std::string &nume, const std::string &prenume, int varsta, int experienta);
     virtual ~Atacant();
 
